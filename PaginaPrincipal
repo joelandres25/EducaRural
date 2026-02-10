@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baúl Pedagógico</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; padding: 20px; background-color: #e8f5e9; color: #2e7d32; }
+        .box { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); max-width: 400px; margin: auto; }
+        button { background-color: #4caf50; color: white; border: none; padding: 15px 25px; font-size: 18px; border-radius: 50px; cursor: pointer; width: 100%; font-weight: bold; }
+        .item { background: #f1f8e9; margin: 10px 0; padding: 15px; border-radius: 10px; text-decoration: none; display: block; color: #1b5e20; font-weight: 500; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>🎒 Mi Baúl</h1>
+        <p>Toca el botón verde antes de salir a la vereda:</p>
+        <button onclick="instalar()">📥 ACTIVAR MODO OFFLINE</button>
+        <div style="margin-top: 20px; text-align: left;">
+            <a class="item" href="https://tu-cuenta.blob.core.windows.net/clases/guia1.pdf">📖 Guía de Matemáticas</a>
+            <a class="item" href="https://tu-cuenta.blob.core.windows.net/clases/video1.mp4">🎥 Video: El Suelo</a>
+        </div>
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js');
+        }
+        function instalar() {
+            alert("Sincronizando contenidos... ¡Listo! Ahora podrás ver estos archivos aunque no tengas señal.");
+        }
+    </script>
+</body>
+</html>
